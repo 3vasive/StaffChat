@@ -27,10 +27,10 @@ public class Events implements Listener {
             if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null && Bukkit.getPluginManager().getPlugin("LuckPerms") != null) {
                 String name = PlaceholderAPI.setPlaceholders(player, "%player_name%");
                 String prefix = PlaceholderAPI.setPlaceholders(player, "%luckperms_prefix%");
-                String send = ("" + ChatColor.GOLD + ChatColor.BOLD +"<" + ChatColor.AQUA + ChatColor.BOLD +"SC" + ChatColor.GOLD + ChatColor.BOLD + "> " + ChatColor.RESET + prefix + name + ChatColor.RED + " "  + message);
+                String send = (StaffChat.getPlugin(StaffChat.class).getConfig().getString("Prefix") + ChatColor.RESET + prefix + name + StaffChat.getPlugin(StaffChat.class).getConfig().getString("Chat_Color") + " "  + message);
                 GetMessage.getMessage(send);
             }else{
-                String send = ("" + ChatColor.GOLD + ChatColor.BOLD +"<" + ChatColor.AQUA + ChatColor.BOLD +"SC" + ChatColor.GOLD + ChatColor.BOLD + "> " + ChatColor.RESET + nama + ChatColor.RED + " " + message);
+                String send = (StaffChat.getPlugin(StaffChat.class).getConfig().getString("Prefix") + ChatColor.RESET + nama + StaffChat.getPlugin(StaffChat.class).getConfig().getString("Chat_Color") + " " + message);
                 GetMessage.getMessage(send);
             }
         }

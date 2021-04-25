@@ -10,6 +10,7 @@ public final class StaffChat extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        this.saveDefaultConfig();
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") == null) {
             Bukkit.getLogger().info(ChatColor.GREEN + "[StaffChat] " + ChatColor.YELLOW + "If you wish to add prefix please install PlaceholderAPI.");
         }
@@ -17,8 +18,9 @@ public final class StaffChat extends JavaPlugin {
             Bukkit.getLogger().info(ChatColor.GREEN + "[StaffChat] " + ChatColor.YELLOW + "If you wish to add prefix please install LuckPerms.");
         }
         getServer().getPluginManager().registerEvents(new Events(this), this);
-        getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Staff chat is ready!");
         getCommand("sc").setExecutor((CommandExecutor) new Commands());
+        getCommand("staffchat").setExecutor((CommandExecutor) new Reload());
+        getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Staff chat is ready!");
     }
 
     @Override
