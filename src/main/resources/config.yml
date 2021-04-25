@@ -1,0 +1,4 @@
+#StaffChat config file
+#Use § for color codes instead of &
+Prefix: "§6§l<§b§lSC§6§l> "
+Chat_Color: "§a"
